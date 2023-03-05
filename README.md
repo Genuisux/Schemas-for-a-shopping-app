@@ -1,6 +1,5 @@
 # Schemas-for-a-shopping-app
 Design the NoSQL schemas for a shopping app. #SpecialManInternship2023
-# SGS_2
 
 ## Question
 Design the NoSQL schemas for a shopping app.
