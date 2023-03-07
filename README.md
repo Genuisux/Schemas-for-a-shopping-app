@@ -7,16 +7,6 @@ Design the NoSQL schemas for a shopping app.
 **User story**: As a shopper, I want to be able to browse a catalog of products and add items to my shopping cart. I also want to be able to view the contents of my cart and adjust the quantity of items in my cart. Finally, I want to be able to place an order and receive confirmation of my order.
 
 
-
-Tasks:
-
-1. Analyze the requirements for the shopping app, including the entities (e.g. products, customers, orders) and their relationships.
-2. Design the NoSQL schema for the shopping app based on the requirements.
-3. Create a repository and push the schema designs.
-4. Add the possible API endpoints to the README.md of the GitHub repository.
-5. Submit your GitHub link.
-
-
 ## Solution
 
 ### Requirements:
@@ -24,8 +14,6 @@ Tasks:
 - The ability for shoppers to add items to their cart and adjust quantities
 - The ability for shoppers to view the contents of their cart and adjust quantities
 - The ability for shoppers to place an order and receive confirmation.
-
-![Busola and Genius](https://user-images.githubusercontent.com/55829039/222960849-9fd10376-b89c-4c6b-8f96-6c9213954c39.png)
 
 
 ### Entities Needed
@@ -42,71 +30,17 @@ Tasks:
 - Each cart can have one or many products
 
 
-#### Customer Collection:
-```
-{
+![Busola and Genius](https://user-images.githubusercontent.com/55829039/222960849-9fd10376-b89c-4c6b-8f96-6c9213954c39.png)
 
-  "_id": ObjectId("..."),
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "address": "123 Main St",
-  "cart": ObjectId("..."),
-  "orders": [
-    ObjectId("..."),
-    ObjectId("...")
-]
-}
-```
 
-#### Cart Collection:
-```
-{
-  "_id": ObjectId("..."),
-  "customer": ObjectId("..."),
-  "items": [
-    {
-    "product": ObjectId("..."),
-    "quantity": 2
-    },
-    {
-    "product": ObjectId("..."),
-    "quantity": 1
-    }
-  ]
-}
-```
 
-#### Product Collection:
-```
-{
-  "_id": ObjectId("..."),
-  "name": "Product 1",
-  "description": "This is product 1",
-  "price": 10.99,
-  "image_url": "https://example.com/product1.jpg"
-}
-```
-
-#### Order Collection:
-```
-{
-    "_id": ObjectId("..."),
-    "customer": ObjectId("..."),
-    "items": [
-    {
-    "product": ObjectId("..."),
-    "quantity": 2
-    },
-    {
-    "product": ObjectId("..."),
-    "quantity": 1
-    }
-    ],
-    "total": 32.97,
-    "status": "pending",
-    "created_at": ISODate("...")
-}
-```
+### Features of the Shopping App:
+-  Browse catalog: The user should be able to browse a catalog of products with images and descriptions.
+-  Add items to shopping cart: The user should be able to add items to their shopping cart by clicking on an "Add to Cart" button on the product detail page.
+-  View shopping cart contents: The user should be able to view the contents of their shopping cart, including the name, image, and price of each item, as well as the total cost of their order so far.
+- Adjust quantity of items in cart: The user should be able to adjust the quantity of each item in their cart or remove items altogether.
+- Place an order: The user should be able to place an order by entering their shipping and billing information, and selecting a payment method.
+- Receive confirmation: The user should receive a confirmation message or email that their order has been received and processed successfully.
 
 In this schema, the `Customer` collection stores information about the customers, including their `name`, `email`, and `address`. Each customer has a cart and can have one or many orders. The `Cart` collection stores the items that a customer has added to their `cart`, including the product ID and quantity. The `Product` collection stores information about the products, including the `name`, `description`, `price`, and `image URL`. The `Order` collection stores information about the orders, including the customer ID, items, total price, status, and creation date.
 
